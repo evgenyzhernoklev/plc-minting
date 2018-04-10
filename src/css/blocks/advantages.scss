@@ -1,7 +1,26 @@
+.advantagesWrapper {
+  position: relative;
+  margin: 59px 0 84px;
+
+  &__imgWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 37.5%;
+    margin-left: -18.75%;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
 .advantages {
+  display: flex;
+  justify-content: space-between;
 
   &__info {
-
+    flex-basis: 260px;
   }
 }
 
@@ -10,11 +29,15 @@
 .advantagesList {
 
   &--textRight {
-
+    text-align: right;
   }
 
   &__item {
+    margin-bottom: 100px;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__icon {
@@ -22,19 +45,12 @@
   }
 
   &__title {
-
+    margin-bottom: 15px;
+    @include font-sans-bold();
   }
 
   &__info {
-
-  }
-}
-
-
-
-.advantagesImgWrapper {
-
-  &__img {
-
+    font-size: 17px;
+    line-height: 24px;
   }
 }

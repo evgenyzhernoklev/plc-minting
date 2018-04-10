@@ -111,8 +111,8 @@ html
 
 			section.section.salary
 				.contentIn
-					h4.subtitleMain
-					.salary__common
+					h4.salary__title.subtitleMain Select Your Own Speed of Improving Your Life
+					.salary__cols.salary__cols--common
 						.salary__item.salaryItem
 							.salaryItem__line.salaryItem__line--grayLight
 							p.salaryItem__title STARTER <br>MINTER
@@ -182,7 +182,7 @@ html
 									| Daily Payout
 							a.salaryItem__button href="#" buy
 
-					.salary__special
+					.salary__cols.salary__cols--special
 						.salary__item.salaryItem.salaryItem--special.salaryItem--orange
 							.salaryItem__line.salaryItem__line--orange
 							p.salaryItem__title PRO <br>MINTER
@@ -217,8 +217,8 @@ html
 								li.salaryInfoList__item
 									| Daily Payout
 							a.salaryItem__button href="#" buy
-						.salary__item.salaryItem.salaryItem--special.salaryItem--black
-							.salaryItem__line.salaryItem__line--black
+						.salary__item.salaryItem.salaryItem--special.salaryItem--blueDark
+							.salaryItem__line.salaryItem__line--blueDark
 							p.salaryItem__title PLATIN <br>MINTER
 							p.salaryItem__salary
 								| <sup class="salaryItem__currency"></sup> 9.000
@@ -256,8 +256,8 @@ html
 
 			section.section.messenger
 				.contentIn
-					h4.subtitleMain
-					p.infoMain
+					h4.titleMain Crypto Messenger
+					p.messenger__info.infoMain We have combined the common smartphone technology with Blockchain technology of the future in order to win a huge target group for the coin.
 					.messenger__wallets.walletsButtons
 						a.walletsButtons__button.linkButton.linkButton--blue.linkButton--icon
 							span.linkButton__icon.icon.icon--mac
@@ -265,39 +265,40 @@ html
 						a.walletsButtons__button.linkButton.linkButton--blue.linkButton--icon
 							span.linkButton__icon.icon.icon--and
 							| And
-					img.messenger__img src=""
+					img.messenger__img src="../img/messenger.png"
 
-			section.section#technologies
+			section#technologies.section.bg--gray
 				.contentIn
-					h5.subtitleMain PLC Secure Box
+					h5.titleMain PLC Secure Box
 					p.infoMain This patented device securely saves the private key and enables Platincoin Minting.
-					.advantages
-						.advantages__info
-							ul.advantages__list.advantagesList.advantagesList--textRight
-								li.advantagesList__item
-									span.advantagesList__icon.icon.icon--coins
-									p.advantagesList__title Mining + minting
-									p.advantagesList__info Easy coin access
-								li.advantagesList__item
-									p.advantagesList__title High security
-									p.advantagesList__info Safe storage of a private key
-								li.advantagesList__item
-									p.advantagesList__title Sustainability
-									p.advantagesList__info Saves energy resources and environment
-						.advantages__imgWrapper.advantagesImgWrapper
-							img.advantagesImgWrapper__img src=""
-						.advantages__info
-							ul.advantages__list.advantagesList
-								li.advantagesList__item
-									span.advantagesList__icon.icon.icon--monitor
-									p.advantagesList__title High Speed
-									p.advantagesList__info Fast block creation
-								li.advantagesList__item
-									p.advantagesList__title Great alternative to PC
-									p.advantagesList__info Replaces continuously work of your computer around the clock
-								li.advantagesList__item
-									p.advantagesList__title Stability
-									p.advantagesList__info Stability and speed guaranty of the decentralized PLC network
+					.advantagesWrapper
+						.advantagesWrapper__imgWrapper
+							img.advantagesWrapper__img src="../img/plc_box.png"
+						.advantages
+							.advantages__info
+								ul.advantages__list.advantagesList.advantagesList--textRight
+									li.advantagesList__item
+										span.advantagesList__icon.icon.icon--coins
+										p.advantagesList__title Mining + minting
+										p.advantagesList__info Easy coin access
+									li.advantagesList__item
+										p.advantagesList__title High security
+										p.advantagesList__info Safe storage of a private key
+									li.advantagesList__item
+										p.advantagesList__title Sustainability
+										p.advantagesList__info Saves energy resources and environment
+							.advantages__info
+								ul.advantages__list.advantagesList
+									li.advantagesList__item
+										span.advantagesList__icon.icon.icon--monitor
+										p.advantagesList__title High Speed
+										p.advantagesList__info Fast block creation
+									li.advantagesList__item
+										p.advantagesList__title Great alternative to PC
+										p.advantagesList__info Replaces continuously work of your computer around the clock
+									li.advantagesList__item
+										p.advantagesList__title Stability
+										p.advantagesList__info Stability and speed guaranty of the decentralized PLC network
 
 			section.section.founders.bg--grayDark
 				.contentIn
