@@ -1,0 +1,34 @@
+.colsFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colFlex {
+  flex-basis: 100%;
+}
+
+.colFlex--2 {
+  flex-basis: 50%;
+}
+
+.colFlex--3 {
+  flex-basis: 33.33%;
+}
+
+.colFlex--4 {
+  flex-basis: 25%;
+}
+
+@media ($tablet) {
+  .colFlex--4 {
+    flex-basis: 50%;
+  }
+}
+
+@media ($mobile) {
+  .colFlex--2,
+  .colFlex--3,
+  .colFlex--4 {
+    flex-basis: 100%;
+  }
+}

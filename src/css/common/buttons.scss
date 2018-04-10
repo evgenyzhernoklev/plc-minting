@@ -1,0 +1,12 @@
+.linkButton {
+  cursor: pointer;
+  transition: color $transition-normal, background-color $transition-normal, border-color $transition-normal, opacity $transition-normal;
+
+  &:hover {
+
+  }
+
+  &[disabled] {
+    cursor: default;
+  }
+}
