@@ -1,4 +1,5 @@
 # plc-minting
 
-# npm install
-# gulp
+to start project:
+$ npm install
+$ gulp

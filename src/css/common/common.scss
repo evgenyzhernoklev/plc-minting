@@ -24,6 +24,20 @@ a {
   white-space: nowrap;
 }
 
+.bg {
+  &--gray {
+
+  }
+
+  &--grayDark {
+
+  }
+
+  &--blue {
+
+  }
+}
+
 .forDesktop {
   display: block;
 }
@@ -69,6 +83,13 @@ a {
 
 .titleMain {
 
+  &--blue {
+
+  }
+
+  &--white {
+
+  }
 }
 
 .subtitleMain {
