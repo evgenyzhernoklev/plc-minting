@@ -2,6 +2,9 @@ body {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  @include font-sans-regular();
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 a {
@@ -26,7 +29,7 @@ a {
 
 .bg {
   &--gray {
-
+    background-color: #f8f8f8;
   }
 
   &--grayDark {
@@ -81,31 +84,76 @@ a {
   overflow: hidden;
 }
 
+.section {
+  @include clearfix();
+}
+
 .titleMain {
+  position: relative;
+  margin: 50px 0 41px;
+  padding-bottom: 42px;
+  @include font-raleway-regular();
+  font-size: 48px;
+  line-height: 60px;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 70px;
+    height: 5px;
+    margin-left: -35px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background-color: $blue;
+  }
 
   &--blue {
-
+    color: $blue;
   }
 
   &--white {
+    color: $white;
 
+    &:before {
+      background-color: $white;
+    }
   }
 }
 
 .subtitleMain {
-
+  margin: 53px 0 36px;
+  @include font-raleway-bold();
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
 }
 
 .contentIn {
   position: relative;
-  // max-width: 1000px;
-  // min-width: 320px;
+  max-width: 1280px;
+  min-width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 55px;
+}
+
+@media ($tablet) {
+  .contentIn {
+    padding: 0 20px;
+  }
 }
 
 @media ($mobile) {
+  .titleMain {
 
+  }
+
+  .subtitleMain {
+    margin: 46px 0 36px;
+    font-size: 30px;
+    line-height: 36px;
+  }
 }
 
 

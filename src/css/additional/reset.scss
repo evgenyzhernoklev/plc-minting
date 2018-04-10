@@ -1,16 +1,17 @@
 * {
-	vertical-align: baseline;
-	font-weight: inherit;
+	border: 0 none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: 0 none;
 	font-family: inherit;
+	font-weight: inherit;
 	font-style: inherit;
 	font-size: 100%;
-	border: 0 none;
-	outline: 0;
-	padding: 0;
-	margin: 0;
-	
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	vertical-align: baseline;
 	box-sizing: border-box;
 }
 
@@ -39,4 +40,15 @@ a img {
 	border: 0;
 }
 
-article,aside,figcaption,figure,footer,header,hgroup,nav,section,time {display: block;}
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+time {
+	display: block;
+}

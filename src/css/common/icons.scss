@@ -21,15 +21,15 @@
 }
 
 .icon--purse {
-
+  @include icon(purse, 56px, 49px);
 }
 
 .icon--person {
-
+  @include icon(person, 64px, 64px);
 }
 
 .icon--equipment {
-
+  @include icon(equipment, 47px, 56px);
 }
 
 .icon--win {

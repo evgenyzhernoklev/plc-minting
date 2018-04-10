@@ -6,6 +6,8 @@ mixins for:
   show animation
   hide animation
 
+  fonts
+
   max lines of text
 */
 
@@ -24,7 +26,7 @@ mixins for:
   }
 }
 
-@mixin background-image($name, $width, $height) {
+@mixin icon($name, $width, $height) {
   display: inline-block;
   width: $width;
   height: $height;
@@ -49,6 +51,39 @@ mixins for:
   visibility: hidden;
   opacity: 0;
   transition: opacity $transition-normal, visibility $transition-normal;
+}
+
+
+
+// fonts
+@mixin font-raleway-regular() {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-raleway-semibold() {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+@mixin font-raleway-bold() {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+@mixin font-sans-regular() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-sans-semibold() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+@mixin font-sans-bold() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
 }
 
 
