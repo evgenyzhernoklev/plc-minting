@@ -1,23 +1,72 @@
 .founders {
+  padding: 35px 0 57px;
+
+  &__cols {
+    padding-top: 25px;
+  }
 
   &__col {
+    margin-bottom: 42px;
+  }
+}
 
+@media ($mobile) {
+  .founders {
+    padding: 8px 0 27px;
+
+    &__cols {
+      padding-top: 5px;
+    }
   }
 }
 
 
 
 .foundersPerson {
+  text-align: center;
+
+  &__avatarWrapper {
+    max-width: 370px;
+    width: 65%;
+    margin: 0 auto 30px;
+    box-shadow: 0 3px 20px rgba(0,0,0, 0.15);
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+  }
 
   &__avatar {
-
+    width: 100%;
+    border-radius: 50%;
   }
 
   &__name {
-
+    margin-bottom: 3px;
+    @include font-raleway-bold();
+    font-size: 24px;
+    color: $white;
   }
 
   &__position {
+    color: $blue;
+  }
+}
 
+@media ($mobile) {
+  .foundersPerson {
+    &__avatarWrapper {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    &__name {
+      margin-bottom: 0;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    &__position {
+
+    }
   }
 }

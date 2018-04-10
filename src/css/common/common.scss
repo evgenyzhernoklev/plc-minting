@@ -40,7 +40,7 @@ a {
   }
 
   &--grayDark {
-
+    background-color: #222222;
   }
 
   &--blue {
@@ -103,6 +103,7 @@ a {
   font-size: 48px;
   line-height: 60px;
   text-align: center;
+  text-transform: uppercase;
 
   &:before {
     content: '';
@@ -162,7 +163,8 @@ a {
   }
 
   .titleMain {
-
+    font-size: 36px;
+    line-height: 48px;
   }
 
   .subtitleMain {
