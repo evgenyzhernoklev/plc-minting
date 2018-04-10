@@ -1,27 +1,126 @@
 .comparison {
+  display: flex;
+  justify-content: space-between;
+  margin: 53px 0 93px;
 
   &__col {
+    flex-basis: 46%;
 
+    &--alignRight {
+      text-align: right;
+    }
   }
 
   &__title {
+    margin-bottom: 34px;
+    @include font-raleway-semibold();
+    font-size: 24px;
+  }
+}
 
+@media ($mobile) {
+  .comparison {
+    flex-wrap: wrap;
+    margin: 40px 0 74px;
+
+    &__col {
+      flex-basis: 100%;
+      margin-bottom: 40px;
+
+      &--alignRight {
+        text-align: left;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__title {
+      margin-bottom: 22px;
+      font-size: 20px;
+      text-align: center;
+    }
   }
 }
 
 
 
 .comparisonList {
-
   &--minus {
+    .comparisonList__item {
+      padding-right: 44px;
 
+      &:before {
+        right: 0;
+        background-color: $red;
+        @include icon(close, 12px, 12px);
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &--plus {
+    .comparisonList__item {
+      padding-left: 44px;
 
+      &:before {
+        left: 0;
+        background-color: $blue;
+        @include icon(check, 14px, 11px);
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &__item {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 17px;
+    line-height: 30px;
 
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 4px;
+      border-radius: 50%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media ($mobile) {
+  .comparisonList {
+    &--minus,
+    &--plus {
+      .comparisonList__item {
+        padding-right: 0;
+        padding-left: 44px;
+
+        &:before {
+          left: 0;
+        }
+      }
+    }
+
+    &__item {
+      margin-bottom: 18px;
+      font-size: 15px;
+      line-height: 24px;
+
+      &:before {
+        top: 1px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }

@@ -12,6 +12,13 @@ a {
   cursor: pointer;
 }
 
+@media ($mobile) {
+  body  {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
 
 
 // helpers
@@ -138,6 +145,11 @@ a {
   padding: 0 55px;
 }
 
+.infoMain {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 @media ($tablet) {
   .contentIn {
     padding: 0 20px;
@@ -145,6 +157,10 @@ a {
 }
 
 @media ($mobile) {
+  .contentIn {
+    padding: 0 15px;
+  }
+
   .titleMain {
 
   }
