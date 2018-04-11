@@ -29,8 +29,18 @@
 
 
 .walletsButtons {
+  text-align: center;
 
-  &__button {}
+  &__button {
+    height: 60px;
+    margin: 0 5px;
+    padding: 0 28px;
+    @include font-sans-bold();
+    font-size: 16px;
+    line-height: 60px;
+    color: $white;
+    @include blue-bg-shadow(30px);
+  }
 }
 
 

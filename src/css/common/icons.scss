@@ -33,15 +33,15 @@
 }
 
 .icon--win {
-
+  @include icon(win, 20px, 20px);
 }
 
 .icon--mac {
-
+  @include icon(mac, 20px, 25px);
 }
 
 .icon--and {
-
+  @include icon(and, 22px, 26px);
 }
 
 .icon--coins {

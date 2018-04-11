@@ -3,12 +3,37 @@
 
   &__info {
     max-width: 940px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 41px;
   }
 
   &__wallets {
+    margin-bottom: 70px;
+  }
+}
 
+@media ($mobile) {
+  .messenger {
+    padding: 0 0 50px;
+
+    &__title {
+      margin-bottom: 25px;
+    }
+
+    &__info {
+      margin-bottom: 25px;
+    }
+
+    &__in {
+      flex-direction: column-reverse;
+
+      .colFlex {
+        margin-bottom: 18px;
+      }
+    }
+
+    &__wallets {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -17,6 +42,7 @@
 .messengerCols {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   &__col {
     position: relative;
@@ -38,5 +64,19 @@
 
   &__img {
     max-width: 100%;
+  }
+}
+
+@media ($mobile) {
+  .messengerCols {
+    margin: 0 -92px;
+
+    &__col {
+
+      &:first-child,
+      &:last-child {
+        display: none;
+      }
+    }
   }
 }
