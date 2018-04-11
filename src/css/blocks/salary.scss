@@ -1,5 +1,9 @@
+$small: 'max-width: 580px';
+
 .salary {
   padding: 0 0 70px;
+  background: url('../img/bg/speed_bg.jpg') no-repeat top center;
+  background-size: cover;
 
   &__title {
     margin-bottom: 70px;
@@ -19,11 +23,28 @@
   }
 }
 
+@media ($tablet) {
+  .salary {
+    &__cols {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+@media ($small) {
+  .salary {
+    padding: 0 0 40px;
+  }
+}
+
 
 
 .salaryItem {
+  position: relative;
   flex-basis: 23%;
   margin-bottom: 30px;
+  padding-bottom: 130px;
   background: $white;
   box-shadow: 0 2px 20px rgba(0,0,0, 0.15);
   border-radius: 5px;
@@ -31,18 +52,56 @@
 
   &--special {
     flex-basis: 31%;
+    color: $white;
+
+    .salaryItem__title {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    .salaryInfoList {
+      &__item {
+        border-color: rgba(255,255,255, 0.3);
+
+        &:first-child {
+          border-color: rgba(255,255,255, 0.3);
+        }
+      }
+
+      &__strong {
+        color: $white;
+      }
+    }
   }
 
   &--orange {
+    background: linear-gradient(135deg, #facd00 0%, #ff8400 60%);
 
+    .salaryInfoList {
+      &__item {
+        color: #feea91;
+      }
+    }
   }
 
   &--violet {
+    background: linear-gradient(135deg, #945cc3 0%, #704396 60%);
 
+    .salaryInfoList {
+      &__item {
+        color: #ddb6fe;
+      }
+    }
   }
 
   &--blueDark {
+    background: linear-gradient(135deg, #3b4e57 0%, #101619 60%);
 
+    .salaryInfoList {
+      &__item {
+        color: #82929a;
+      }
+    }
   }
 
   &__line {
@@ -79,6 +138,7 @@
   }
 
   &__title {
+    margin-bottom: 8px;
     @include font-sans-bold();
     font-size: 24px;
     line-height: 30px;
@@ -86,11 +146,44 @@
   }
 
   &__salary {
+    margin-bottom: 14px;
+    @include font-sans-semibold();
+    font-size: 36px;
+    text-align: center;
+  }
 
+  &__currency {
+    margin-right: 5px;
+    font-size: 24px;
   }
 
   &__button {
-    margin: 0 30px;
+    display: block;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+@media ($tablet) {
+  .salaryItem {
+    flex-basis: 48%;
+
+    &:nth-child(2n) {
+      margin-left: 4%;
+    }
+  }
+}
+
+@media ($small) {
+  .salaryItem {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+
+    &:nth-child(2n) {
+      margin-left: 0;
+    }
   }
 }
 
@@ -105,6 +198,10 @@
     font-size: 16px;
     color: #7e7e7e;
     border-bottom: 1px solid #edeaea;
+
+    &:first-child {
+      border-top: 1px solid #edeaea;
+    }
   }
 
   &__strong {

@@ -1,5 +1,7 @@
 .linkButton {
+  position: relative;
   display: inline-block;
+  text-align: center;
   cursor: pointer;
   transition: color $transition-normal, background-color $transition-normal, border-color $transition-normal, opacity $transition-normal;
 
@@ -11,4 +13,22 @@
     margin-right: 12px;
     vertical-align: text-bottom;
   }
+}
+
+.linkButton--gray {
+  height: 50px;
+  @include font-sans-bold();
+  line-height: 50px;
+  color: $black;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+}
+
+.linkButton--white {
+  height: 50px;
+  @include font-sans-bold();
+  line-height: 50px;
+  color: $black;
+  background-color: $white;
+  border-radius: 25px;
 }
