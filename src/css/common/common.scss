@@ -43,8 +43,8 @@ a {
     background-color: #222222;
   }
 
-  &--blue {
-
+  &--blueGradient {
+    @include linear-gradient(90deg, $blue, #1675eb);
   }
 }
 

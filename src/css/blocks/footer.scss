@@ -1,26 +1,41 @@
 .footer {
+  padding-top: 103px;
+  background-color: #1a1a1a;
+  font-size: 17px;
+  line-height: 24px;
+  color: #535353;
 
   &__title {
-
+    margin-bottom: 37px;
+    @include font-sans-bold();
+    text-transform: uppercase;
+    color: $blue;
   }
 
   &__copyright {
-
+    margin-top: 62px;
+    padding: 31px 0;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
   }
 }
 
 
 
 .footerCols {
+  display: flex;
 
   &__col {
-
+    flex-basis: 20%;
   }
 }
 
 
 
 .footerColsInfo {
+  flex-basis: 40%;
 
   &__logo {
 
@@ -36,11 +51,16 @@
 .footerMenu {
 
   &__item {
+    margin-bottom: 12px;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
-
+    font-size: 17px;
+    color: #7e7e7e;
   }
 }
 
@@ -49,16 +69,23 @@
 .footerSocial {
 
   &__link {
-    &--fb {
+    margin-right: 20px;
+    vertical-align: middle;
 
+    &--fb {
+      @include icon(fb, 12px, 22px);
     }
 
     &--youtube {
-
+      @include icon(youtube, 21px, 16px);
     }
 
     &--vk {
+      @include icon(vk, 25px, 14px);
+    }
 
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

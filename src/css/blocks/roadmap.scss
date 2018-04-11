@@ -1,5 +1,5 @@
 .roadmap {
-
+  color: $white;
 }
 
 
@@ -15,7 +15,9 @@
   }
 
   &__title {
-
+    margin-bottom: 10px;
+    @include font-sans-bold();
+    font-size: 24px;
   }
 
   &__info {
