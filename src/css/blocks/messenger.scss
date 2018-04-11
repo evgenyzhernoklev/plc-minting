@@ -10,6 +10,31 @@
   &__wallets {
 
   }
+}
+
+
+
+.messengerCols {
+  display: flex;
+  align-items: center;
+
+  &__col {
+    position: relative;
+    z-index: 5;
+
+    &--left {
+      margin-right: -50px;
+    }
+
+    &--right {
+      margin-left: -50px;
+      z-index: 2;
+    }
+
+    &:last-child {
+      z-index: 1;
+    }
+  }
 
   &__img {
     max-width: 100%;
