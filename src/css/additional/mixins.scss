@@ -5,6 +5,7 @@ mixins for:
   linear-gardient
   show animation
   hide animation
+  backgrounds
 
   fonts
 
@@ -53,6 +54,14 @@ mixins for:
   transition: opacity $transition-normal, visibility $transition-normal;
 }
 
+
+
+// backgrounds
+@mixin blue-bg-shadow($b-radius: false) {
+  @include linear-gradient(90deg, $blue, #1675eb);
+  box-shadow: 0 5px 15px rgba(22, 118, 235, 0.5);
+  @if ($b-radius) { border-radius: $b-radius; }
+}
 
 
 // fonts

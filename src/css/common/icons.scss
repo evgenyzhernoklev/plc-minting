@@ -45,9 +45,39 @@
 }
 
 .icon--coins {
-
+  @include icon(mining, 40px, 36px);
 }
 
 .icon--monitor {
+  @include icon(high_speed, 35px, 35px);
+}
 
+.icon--security {
+  @include icon(security, 40px, 40px);
+  background-position: 12px center;
+}
+
+.icon--alternative {
+  @include icon(alternative, 40px, 31px);
+}
+
+.icon--sustainability {
+  @include icon(sustainability, 40px, 40px);
+}
+
+.icon--stability {
+  @include icon(stability, 40px, 40px);
+}
+
+
+
+.iconBg {
+  &--blue {
+    @include blue-bg-shadow(50%);
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -53,15 +53,6 @@
     bottom: 19px;
     left: 19px;
     right: 19px;
-    @include linear-gradient(90deg, $blue, #1675eb);
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(22, 118, 235, 0.5);
-  }
-
-  &__icon {
-    position: relative;
-    width: 100px;
-    height: 100px;
   }
 
   &__info {

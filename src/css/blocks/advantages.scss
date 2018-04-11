@@ -4,10 +4,11 @@
 
   &__imgWrapper {
     position: absolute;
+    top: 5%;
     bottom: 0;
     left: 50%;
-    width: 37.5%;
-    margin-left: -18.75%;
+    width: calc(55.6% - 220px);
+    transform: translateX(-50%);
   }
 
   &__img {
@@ -15,33 +16,90 @@
   }
 }
 
-.advantages {
-  display: flex;
-  justify-content: space-between;
+@media ($tablet) {
+  .advantagesWrapper {
+    &__imgWrapper {
+      position: static;
+      width: 100%;
+      max-width: 300px;
+      transform: none;
+      margin: 0 auto 50px;
+    }
+  }
+}
 
-  &__info {
-    flex-basis: 260px;
+@media ($mobile) {
+  .advantagesWrapper {
+    margin: 35px 0 21px;
+
+    &__imgWrapper {
+      position: static;
+      margin: 0 auto 30px;
+      width: auto;
+      max-width: 300px;
+    }
   }
 }
 
 
 
-.advantagesList {
-
-  &--textRight {
-    text-align: right;
-  }
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   &__item {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-start;
     margin-bottom: 100px;
 
-    &:last-child {
-      margin-bottom: 0;
+    &:nth-child(1) {
+      order: 1;
+    }
+    &:nth-child(2) {
+      order: 3;
+    }
+    &:nth-child(3) {
+      order: 5;
+    }
+    &:nth-child(4) {
+      order: 2;
+    }
+    &:nth-child(5) {
+      order: 4;
+    }
+    &:nth-child(6) {
+      order: 6;
+    }
+
+    &--alignRight {
+      text-align: right;
+
+      .advantages__in {
+        margin-left: auto;
+        margin-right: 55.6%;
+      }
+
+      .advantages__iconBg {
+        left: auto;
+        right: -95px;
+      }
     }
   }
 
-  &__icon {
+  &__in {
+    position: relative;
+    flex-basis: 44.4%;
+    margin-left: 55.6%;
+  }
 
+  &__iconBg {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 7px;
+    left: -95px;
   }
 
   &__title {
@@ -52,5 +110,50 @@
   &__info {
     font-size: 17px;
     line-height: 24px;
+  }
+}
+
+@media ($tablet) {
+  .advantages {
+    justify-content: center;
+
+    &__item {
+      flex-basis: 35%;
+      margin: 0 5% 70px;
+      text-align: center;
+
+      &--alignRight {
+        .advantages__in {
+          margin-right: 0;
+        }
+      }
+
+      &:nth-child(n) {
+        order: 0;
+      }
+    }
+
+    &__in {
+      flex-basis: 100%;
+      margin-left: 0;
+    }
+
+    &__iconBg {
+      position: static;
+      margin: 0 auto 20px;
+    }
+  }
+}
+
+@media ($mobile) {
+  .advantages {
+    &__item {
+      flex-basis: 44%;
+      margin: 0 3% 44px;
+    }
+
+    &__info {
+      font-size: 15px;
+    }
   }
 }
