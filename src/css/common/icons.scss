@@ -9,15 +9,15 @@
 
 
 .icon--controller {
-
+  @include icon(controller, 24px, 24px);
 }
 
 .icon--node {
-
+  @include icon(node, 25px, 23px);
 }
 
 .icon--wallet {
-
+  @include icon(wallet, 24px, 23px);
 }
 
 .icon--purse {
