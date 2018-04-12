@@ -3,6 +3,12 @@
   color: $white;
 }
 
+@media ($mobile) {
+  .roadmap {
+    padding: 10px 0 25px;
+  }
+}
+
 
 
 .roadmapItem {
@@ -69,7 +75,7 @@
   }
 
   &__title {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     @include font-sans-bold();
     font-size: 24px;
   }
@@ -99,6 +105,50 @@
 
     &__info {
       right: 165px;
+    }
+  }
+}
+
+@media ($mobile) {
+  .roadmapItem {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 60px;
+    padding-bottom: 40px;
+    text-align: left;
+
+    &:before {
+      left: 10px;
+      right: auto;
+      top: 10px;
+      bottom: -5px;
+      width: 1px;
+      height: auto;
+      background: #66c0f2;
+    }
+
+    &--right {
+      .roadmapItem {
+        &__point {
+          left: 0;
+        }
+      }
+    }
+
+    &__point {
+      top: 5px;
+      right: auto;
+      left: 0;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__info {
+      position: static;
+      padding-right: 10px;
     }
   }
 }
