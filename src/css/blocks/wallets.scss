@@ -1,28 +1,83 @@
 .wallets {
+  display: flex;
+  align-items: center;
+  margin-right: -25%;
+  padding: 20px 0 50px;
 
   &__info {
-
+    flex-basis: 420px;
+    flex-shrink: 0;
   }
+}
 
-  &__screens {
+@media ($tablet) {
+  .wallets {
+    margin-right: 0;
 
+    &__info {
+      flex-basis: 400px;
+    }
+  }
+}
+
+@media ($mobile) {
+  .wallets {
+    flex-direction: column-reverse;
+    padding: 0 0 45px;
   }
 }
 
 
 
 .walletsInfo {
-
   &__text {
-
+    margin-bottom: 38px;
   }
 
   &__delimiter {
+    margin: 20px 0 13px;
+    position: relative;
+    text-align: center;
 
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #e8e8e8;
+    }
   }
 
   &__delimiterHelper {
+    position: relative;
+    display: inline-block;
+    padding: 0 5px 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: $white;
+  }
+}
 
+@media ($mobile) {
+  .walletsInfo {
+    &__text {
+      margin-bottom: 25px;
+    }
+
+    &__buttons {
+      display: flex;
+
+      .walletsButtons__button {
+        margin: 0 5px;
+        padding: 0 12px;
+        height: 50px;
+        line-height: 50px;
+        white-space: nowrap;
+      }
+    }
   }
 }
 
@@ -46,21 +101,95 @@
 
 
 .walletsInfoList {
+  text-align: center;
 
   &__item {
-
+    margin-bottom: 6px;
   }
 
   &__link {
+    position: relative;
+    display: inline-block;
+    @include font-raleway-semibold();
+    font-size: 24px;
+    line-height: 24px;
+    color: $black;
+    border-bottom: 1px solid $black;
 
+    &:before {
+      content: '';
+      @include icon(download, 24px, 22px);
+      position: absolute;
+      top: 2px;
+      right: 100%;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+@media ($mobile) {
+  .walletsInfoList {
+    &__item {
+      margin-bottom: 10px;
+    }
+
+    &__link {
+      font-size: 20px;
+      line-height: 20px;
+    }
   }
 }
 
 
 
 .walletsScreens {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__col {
+    position: relative;
+    z-index: 5;
+    margin: 0 3%;
+
+    &--right {
+      z-index: 2;
+
+      &:last-child {
+        z-index: 1;
+      }
+    }
+  }
 
   &__img {
+    width: 140%;
+  }
+}
 
+@media ($tablet) {
+  .walletsScreens {
+    &__col {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media ($mobile) {
+  .walletsScreens {
+    margin: 0 -11% 20px -20%;
+
+    &__col {
+      margin: 0 1%;
+    }
+
+    &__img {
+      width: 120%;
+    }
   }
 }
