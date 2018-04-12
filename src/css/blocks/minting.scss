@@ -1,52 +1,183 @@
 .minting {
-  &__scheme {
+  padding-bottom: 60px;
 
+  &__about {
+    margin-bottom: 35px;
+    font-size: 17px;
+  }
+
+  &__cols {
+    display: flex;
+    font-size: 17px;
+  }
+
+  &__scheme {
+    flex-basis: 710px;
+    flex-shrink: 0;
+    margin-top: 27px;
   }
 
   &__info {
+    flex-basis: 50%;
+  }
+}
 
+@media (max-width: 1200px) {
+  .minting {
+    &__cols {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__scheme {
+      margin-bottom: 30px;
+    }
+
+    &__info {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@media ($mobile) {
+  .minting {
+    padding-bottom: 47px;
+
+    &__subtitle {
+      margin: 37px 0 15px;
+      padding: 0 20px;
+    }
+
+    &__about {
+      margin-bottom: 0;
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    &__cols {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    &__scheme {
+      flex-basis: 100%;
+      margin-bottom: 5px;
+    }
   }
 }
 
 
 
 .mintingScheme {
+  position: relative;
 
   &__img {
+    width: 445px;
+  }
+}
 
+@media ($mobile) {
+  .mintingScheme {
+    &__img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 10px;
+    }
   }
 }
 
 
 
 .mintingSchemeList {
-
   &__item {
+    position: absolute;
+    right: 35px;
+    width: 280px;
+    height: 70px;
+    padding-left: 75px;
+    padding-right: 20px;
+    line-height: 70px;
+    color: $white;
+    background-color: $blue;
+    box-shadow: 0 5px 15px rgba(22, 118, 235, 0.5);
+    border-radius: 35px;
 
+    &:nth-child(1) {
+      top: 45px;
+
+      .mintingSchemeList__title {
+        padding-top: 5px;
+        line-height: 24px;
+      }
+    }
+    &:nth-child(2) {
+      top: 185px;
+    }
+    &:nth-child(3) {
+      top: 325px;
+    }
   }
 
   &__icon {
-
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: $white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
   }
 
   &__title {
-
+    @include font-sans-semibold();
   }
 
   &__info {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
 
+@media ($mobile) {
+  .mintingSchemeList {
+    &__item {
+      position: relative;
+      margin: 0 auto 20px;
+
+      &:nth-child(n) {
+        top: auto;
+        right: auto;
+      }
+    }
   }
 }
 
 
 
 .mintingInfo {
-
   &__text {
-
+    margin-bottom: 31px;
   }
 
   &__title {
+    margin-bottom: 13px;
+    @include font-raleway-semibold();
+    font-size: 24px;
+  }
+}
 
+@media ($mobile) {
+  .mintingInfo {
+    &__text {
+      margin-bottom: 25px;
+    }
+
+    &__title {
+      margin-bottom: 23px;
+      font-size: 20px;
+    }
   }
 }
