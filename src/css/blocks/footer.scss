@@ -42,6 +42,14 @@
         top: 7px;
         right: 22px;
         @include icon(arrow_blue, 9px, 6px);
+        transform: rotate(180deg);
+        transition: transform $transition-normal;
+      }
+
+      &.is-active {
+        &:before {
+          transform: rotate(0deg);
+        }
       }
     }
 
