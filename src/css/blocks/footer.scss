@@ -26,14 +26,45 @@
   }
 }
 
+@media ($mobile) {
+  .footer {
+    padding-top: 65px;
+
+    &__title {
+      position: relative;
+      margin-bottom: 7px;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 7px;
+        right: 22px;
+        @include icon(arrow_blue, 9px, 6px);
+      }
+    }
+
+    &__social {
+      margin-top: 10px;
+    }
+
+    &__copyright {
+      margin-top: 0;
+      padding: 16px 0 25px;
+    }
+
+    .footer__copyrightInfo {
+      display: block;
+      line-height: 20px;
+    }
+  }
+}
+
 
 
 .footerCols {
   display: flex;
-
-  &__in {
-
-  }
 
   &__col {
     flex-basis: 20%;
@@ -41,6 +72,21 @@
 
   &__select {
     margin-bottom: 45px;
+  }
+}
+
+@media ($mobile) {
+  .footerCols {
+    flex-wrap: wrap;
+
+    &__col {
+      flex-basis: 100%;
+      margin-bottom: 19px;
+    }
+
+    &__select {
+      margin-bottom: 25px;
+    }
   }
 }
 
@@ -62,10 +108,27 @@
   }
 }
 
+@media ($mobile) {
+  .footerColsInfo {
+    flex-basis: 100%;
+    padding-right: 0;
+    order: 1;
+
+    &__logo {
+      display: block;
+      height: 11px;
+      margin: 30px auto 25px;
+    }
+
+    &__text {
+      font-size: 15px;
+    }
+  }
+}
+
 
 
 .footerMenu {
-
   &__item {
     margin-bottom: 12px;
 
@@ -80,10 +143,25 @@
   }
 }
 
+@media ($mobile) {
+  .footerMenu {
+    &__item {
+      margin-bottom: 11px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__link {
+      font-size: 15px;
+    }
+  }
+}
+
 
 
 .footerSocial {
-
   &__link {
     margin-right: 20px;
     vertical-align: middle;
