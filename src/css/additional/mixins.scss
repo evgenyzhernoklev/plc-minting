@@ -63,6 +63,13 @@ mixins for:
   @if ($b-radius) { border-radius: $b-radius; }
 }
 
+@mixin gray-bg-shadow($b-radius: false) {
+  @include linear-gradient(90deg, #454547, #27282a);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  @if ($b-radius) { border-radius: $b-radius; }
+}
+
+
 
 // fonts
 @mixin font-raleway-regular() {

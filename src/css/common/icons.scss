@@ -67,11 +67,31 @@
   @include icon(stability, 40px, 40px);
 }
 
+.icon--community {
+  @include icon(community, 56px, 51px);
+}
+
+.icon--countries {
+  @include icon(countries, 56px, 60px);
+}
+
+.icon--offices {
+  @include icon(offices, 56px, 51px);
+}
+
+.icon--employee {
+  @include icon(employee, 56px, 56px);
+}
+
 
 
 .iconBg {
   &--blue {
     @include blue-bg-shadow(50%);
+  }
+
+  &--gray {
+    @include gray-bg-shadow(50%);
   }
 
   &__icon {

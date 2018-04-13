@@ -1,14 +1,43 @@
 .geographyCols {
+  padding: 30px 0 0;
+  text-align: center;
 
-  &__icon {
+  &__col {
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
 
+  &__iconBg {
+    margin: 0 auto 11px;
+    width: 100px;
+    height: 100px;
   }
 
   &__title {
-
+    margin-bottom: 3px;
+    @include font-sans-bold();
+    font-size: 36px;
   }
 
   &__info {
+    color: #333333;
+  }
+}
 
+@media ($mobile) {
+  .geographyCols {
+    justify-content: space-between;
+    padding: 10px 0 0;
+
+    &__col {
+      flex-basis: 45%;
+      margin-bottom: 25px;
+      padding: 0;
+    }
+
+    &__title {
+      margin-bottom: 3px;
+      font-size: 30px;
+    }
   }
 }
