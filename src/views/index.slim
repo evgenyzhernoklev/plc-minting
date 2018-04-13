@@ -8,10 +8,8 @@ html
 		link rel="stylesheet" media="all" href="../css/app.css"
 	body
 		.contentWrapper
-			| Привет, Мир!
-
 			.menuWrapper
-				.contentIn
+				.menuWrapper__in.contentIn
 					a.menuWrapper__logo href="#"
 					nav.menuWrapper__menu.menu
 						a.menu__link href="#minting" Minting
@@ -25,13 +23,17 @@ html
 							span.menuLanguage__current en
 
 			header.header
-				.contentIn
+				.header__in.contentIn
 					h1.header__title
 						| Platincoin
-						img.header__logo src=""
+						img.header__logo src="../img/icons/png/logo_header.png"
 					.header__buttons
-						a.header__button.linkButton.linkButton--blue href="#" Be a Minter
-						a.header__button.linkButton.linkButton--whiteTransparent href="#" Learn More
+						a.header__button.linkButton.linkButton--blue.linkButton--animate href="#"
+							span.linkButton__out Be a Minter
+							span.linkButton__over Be a Minter
+						a.header__button.linkButton.linkButton--whiteTransparent.linkButton--animate href="#"
+							span.linkButton__out Learn More
+							span.linkButton__over Learn More
 
 			section.section.minting#minting
 				.contentIn

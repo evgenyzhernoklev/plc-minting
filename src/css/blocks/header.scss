@@ -1,18 +1,50 @@
 .header {
+  height: 880px;
+  text-align: center;
+  background: url('../img/header_bg.jpg') no-repeat top center;
+  background-size: cover;
+
+  &__in {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 
   &__title {
-
+    font-size: 0;
+    flex-basis: 100%;
   }
 
   &__logo {
-
+    width: 70%;
+    max-width: 600px;
   }
 
   &__buttons {
-
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 80px;
   }
 
   &__button {
+    display: block;
+    margin: 0 auto 20px;
+  }
+}
 
+@media ($mobile) {
+  .header {
+    height: 400px;
+
+    &__buttons {
+      bottom: 20px;
+    }
+
+    &__button {
+      margin-bottom: 10px;
+    }
   }
 }
