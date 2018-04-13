@@ -12,6 +12,10 @@
     color: $blue;
   }
 
+  &__social {
+    margin-top: -17px;
+  }
+
   &__copyright {
     margin-top: 62px;
     padding: 31px 0;
@@ -27,8 +31,16 @@
 .footerCols {
   display: flex;
 
+  &__in {
+
+  }
+
   &__col {
     flex-basis: 20%;
+  }
+
+  &__select {
+    margin-bottom: 45px;
   }
 }
 
@@ -36,13 +48,17 @@
 
 .footerColsInfo {
   flex-basis: 40%;
+  padding-right: 5%;
 
   &__logo {
-
+    height: 15px;
+    margin: 0 0 45px 40px;
   }
 
   &__text {
-
+    margin-bottom: 25px;
+    font-size: 17px;
+    line-height: 24px;
   }
 }
 
