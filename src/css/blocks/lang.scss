@@ -1,0 +1,59 @@
+$lang-list: ar ch de en fr ind it jp kr kz ml mn pg ru sp th tur vt;
+@mixin icon-lang($name, $width, $height) {
+  content: '';
+  position: absolute;
+  top: 11px;
+  left: 16px;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('../img/icons/lang/#{$name}.svg');
+  background-size: $width $height;
+}
+
+.lang {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--cols2 {
+    .lang__item {
+      flex-basis: 50%;
+    }
+  }
+
+  &__item {
+    flex-basis: 100%;
+    position: relative;
+    font-size: 14px;
+
+    &--special {
+      font-size: 16px;
+      @include font-sans-bold();
+    }
+  }
+
+  &__link {
+    display: block;
+    padding-left: 55px;
+    height: 46px;
+    line-height: 46px;
+    color: $black;
+    background-color: $white;
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+}
+
+@each $lang in $lang-list {
+  .lang__item--#{$lang} {
+    .lang__link {
+      &:before {
+        @include icon-lang($lang, 24px, 24px);
+      }
+    }
+  }
+}
