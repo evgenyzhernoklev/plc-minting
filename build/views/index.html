@@ -9,13 +9,31 @@
   </head>
   <body>
     <div class="contentWrapper">
-      <div class="menuWrapper">
+      <div class="menuWrapper js-menu-container">
         <div class="menuWrapper__in contentIn">
-          <a class="menuWrapper__logo" href="#"></a>
-          <nav class="menuWrapper__menu menu">
-            <a class="menu__link" href="#minting">Minting</a><a class="menu__link" href="#wallets">PLC WALLETS</a><a class="menu__link" href="#technologies">Technologies</a><a class="menu__link" href="#roadmap">Roadmap</a><a class="menu__link" href="#blog">BLOG</a><a class="menu__button" href="#">log in</a><a class="menu__button" href="#">registration</a>
-            <div class="menu__language menuLanguage">
-              <span class="menuLanguage__current">en</span>
+          <a class="menuWrapper__logo icon icon--logo" href="#"></a>
+          <nav class="menuWrapper__menu menu js-menu">
+            <ul class="menu__list">
+              <li class="menu__listItem">
+                <a class="menu__link is-active js-menu-link" href="#minting">Minting</a>
+              </li>
+              <li class="menu__listItem">
+                <a class="menu__link js-menu-link" href="#wallets">PLC WALLETS</a>
+              </li>
+              <li class="menu__listItem">
+                <a class="menu__link js-menu-link" href="#technologies">Technologies</a>
+              </li>
+              <li class="menu__listItem">
+                <a class="menu__link js-menu-link" href="#roadmap">Roadmap</a>
+              </li>
+              <li class="menu__listItem">
+                <a class="menu__link js-menu-link" href="#blog">BLOG</a>
+              </li>
+              <li class="menu__inHelper js-menu-helper"></li>
+            </ul>
+            <a class="menu__button" href="#">log in</a><a class="menu__button" href="#">registration</a>
+            <div class="menu__language menuLanguage tooltip-container">
+              <span class="menuLanguage__current tooltip-link">en</span>
             </div>
           </nav>
         </div>

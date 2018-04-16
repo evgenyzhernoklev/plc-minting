@@ -1,7 +1,24 @@
 .menuWrapper {
+  position: absolute;
+  z-index: 99;
+  top: 30px;
+  right: 0;
+  left: 0;
+  height: 70px;
+  background-color: transparent;
+  transition: background-color .2s ease-in-out;
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    background-color: #191919;
+  }
 
   &__in {
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
 
   &__logo {
@@ -10,9 +27,44 @@
 }
 
 .menu {
+  display: flex;
+  height: 100%;
+
+  &__list {
+    position: relative;
+    padding-top: 17px;
+  }
+
+  &__listItem {
+    display: inline-block;
+    padding-left: 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
 
   &__link {
+    display: inline-block;
+    padding: 7px 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $white;
+    cursor: pointer;
+  }
 
+  &__inHelper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 5px;
+    background-color: $blue;
+    transition: left 0.5s cubic-bezier(1, 0.01, 0, 1.22);
+
+    &.is-active {
+      display: block;
+    }
   }
 
   &__button {

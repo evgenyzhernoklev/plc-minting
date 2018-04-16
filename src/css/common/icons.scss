@@ -6,6 +6,10 @@
   vertical-align: middle;
 }
 
+.icon--logo {
+  @include icon(logo, 200px, 24px);
+}
+
 .icon--controller {
   @include icon(controller, 24px, 24px);
 }

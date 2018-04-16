@@ -14,6 +14,8 @@ Viewer.prototype.initClasses = function () {
   $('.dropdown-container').each(function() {
     new Dropdown(this);
   });
+  new Menu('.js-menu-container');
+  new Tooltips();
 };
 
 Viewer.prototype.initFunctions = function () {
