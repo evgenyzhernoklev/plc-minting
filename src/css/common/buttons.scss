@@ -3,11 +3,7 @@
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  transition: color $transition-normal, background-color $transition-normal, border-color $transition-normal, opacity $transition-normal;
-
-  &:hover {
-
-  }
+  transition: all $transition-normal;
 
   &__icon {
     margin-right: 12px;
@@ -33,6 +29,71 @@
   border-radius: 25px;
 }
 
-.linkButton--animate {
+.linkButton--blueGradient {
+  height: 60px;
+  font-size: 18px;
+  line-height: 60px;
+  @include font-sans-bold();
+  text-transform: uppercase;
+  color: $white;
+  @include linear-gradient(90deg, #1486e7, #1254c5);
+  box-shadow: 0 5px 15px rgba(22, 118, 235, 0.5);
+  border-radius: 30px;
 
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+    @include blue-bg-shadow();
+    @include linear-gradient(90deg, $blue, #1675eb);
+    @include show();
+  }
+
+  &:hover {
+    &:before {
+      @include hide();
+    }
+  }
+}
+
+.linkButton--whiteTransparent {
+  height: 60px;
+  font-size: 18px;
+  line-height: 58px;
+  @include font-sans-bold();
+  text-transform: uppercase;
+  color: $white;
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 30px;
+
+  &:hover {
+    color: $black;
+    background-color: $white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.linkButton--animate {
+  overflow: hidden;
+
+  .linkButton__animate {
+    position: relative;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transition: top .5s ease;
+  }
+
+  &:hover {
+    .linkButton__animate {
+      top: -100%;
+    }
+  }
 }
