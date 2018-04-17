@@ -34,9 +34,13 @@
     margin: 0 auto 20px;
     width: 230px;
     height: 60px;
-    line-height: 58px;
+    line-height: 60px;
     font-size: 18px;
     @include font-sans-bold();
+
+    &.linkButton--whiteTransparent {
+      line-height: 58px;
+    }
   }
 }
 
@@ -44,12 +48,24 @@
   .header {
     height: 400px;
 
+    &__logo {
+      width: 90%;
+      max-width: 300px;
+    }
+
     &__buttons {
-      bottom: 20px;
+      bottom: 10px;
     }
 
     &__button {
       margin-bottom: 10px;
+      font-size: 16px;
+      height: 50px;
+      line-height: 50px;
+
+      &.linkButton--whiteTransparent {
+        line-height: 48px;
+      }
     }
   }
 }

@@ -58,6 +58,14 @@
   &__info {
     @include font-sans-semibold();
   }
+
+  &__link {
+    color: $black;
+
+    &:hover {
+      color: $blue;
+    }
+  }
 }
 
 @media ($mobile) {
