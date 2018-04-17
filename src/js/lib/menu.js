@@ -5,6 +5,8 @@ var Menu = function(container) {
   this.linksMenu = this.container.find('.js-menu-link');
   this.menuHelper = this.container.find('.js-menu-helper');
   this.mobileToggleButton = this.container.find('.js-menu-mobile-toggle');
+  this.blocksMenu = $('.js-menu-scroll-content');
+  this.blocksMenuPositions = [];
 
   this.MENU_HEIGHT = this.container.innerHeight();
   this.HELPER_WIDTH = this.menuHelper.width();
@@ -16,6 +18,7 @@ var Menu = function(container) {
 Menu.prototype.init = function () {
   var self = this;
 
+  this.collectBlockPositions();
   this.checkMenuPosition();
   this.checkHelperPosition();
 
@@ -23,9 +26,12 @@ Menu.prototype.init = function () {
   this.window.on({
     'scroll': function () {
       self.checkMenuPosition();
+      self.checkActiveLinkMenu();
     },
     'resize': function () {
-      self.checkHelperPosition();
+      self.blocksMenuPositions = [];
+      self.collectBlockPositions();
+      self.checkActiveLinkMenu();
     }
   });
   this.mobileToggleButton.on('click', this.toggleMobileMenu.bind(this));
@@ -42,7 +48,7 @@ Menu.prototype.scrollToContent = function (e) {
   $target.addClass('is-active');
   this.checkHelperPosition();
   $('body, html').animate({
-    scrollTop: elementPositionToScroll
+    scrollTop: elementPositionToScroll + 1
   }, 700);
   this.body.removeClass('menu-opened');
 };
@@ -55,11 +61,14 @@ Menu.prototype.checkMenuPosition = function () {
 };
 
 Menu.prototype.checkHelperPosition = function () {
-  var $linkActive = this.linksMenu.filter('.is-active'),
+  var $linkActive = this.linksMenu.filter('.is-active');
+
+  if (!$linkActive.length) {return;}
+
+  var linkWidth = $linkActive.innerWidth(),
+      linkHeight = this.linksMenu.innerHeight(),
       linkPositionLeft = $linkActive.position().left,
-      linkPositionTop = $linkActive.position().top,
-      linkWidth = $linkActive.innerWidth(),
-      linkHeight = $linkActive.innerHeight();
+      linkPositionTop = $linkActive.position().top;
 
   if (window.viewportSize.getWidth() > this.TABLET_RESOLUTION) {
     this.menuHelper.css({
@@ -77,4 +86,30 @@ Menu.prototype.checkHelperPosition = function () {
 Menu.prototype.toggleMobileMenu = function (e) {
   e.preventDefault();
   this.body.toggleClass('menu-opened');
+};
+
+Menu.prototype.collectBlockPositions = function () {
+  var self = this;
+
+  this.blocksMenu.each(function(index, element) {
+    var topPosition = $(element).offset().top,
+        elementHeight = $(element).innerHeight(),
+        elementPosition = [topPosition, topPosition + elementHeight];
+
+    self.blocksMenuPositions.push(elementPosition);
+  });
+};
+
+Menu.prototype.checkActiveLinkMenu = function () {
+  var self = this,
+      arr = this.blocksMenuPositions,
+      currentPosition = this.window.scrollTop() + this.MENU_HEIGHT;
+
+  self.linksMenu.removeClass('is-active');
+  arr.forEach(function(item, i, arr) {
+    if (currentPosition >= item[0] && currentPosition < item[1]) {
+      self.linksMenu.eq(i).addClass('is-active');
+    }
+  });
+  this.checkHelperPosition();
 };
