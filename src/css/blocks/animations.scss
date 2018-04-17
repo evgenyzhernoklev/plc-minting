@@ -20,16 +20,35 @@
 	}
 }
 
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
 
 
-.js-animation-enable {
-  .animationBlock {
-    &--fadeInLeft {
+
+.animationBlock {
+  &--fadeInLeft {
+    &.js-animation-enable {
       animation: fadeInLeft 1s ease;
     }
+  }
 
-    &--fadeInRight {
+  &--fadeInRight {
+    &.js-animation-enable {
       animation: fadeInRight 1s ease;
+    }
+  }
+
+  &--fadeInUp {
+    &.js-animation-enable {
+      animation: fadeInUp 1s ease;
     }
   }
 }
