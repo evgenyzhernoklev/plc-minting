@@ -7,6 +7,7 @@ var Menu = function(container) {
   this.mobileToggleButton = this.container.find('.js-menu-mobile-toggle');
   this.blocksMenu = $('.js-menu-scroll-content');
   this.blocksMenuPositions = [];
+  this.isLinkScroll = false;
 
   this.MENU_HEIGHT = this.container.innerHeight();
   this.HELPER_WIDTH = this.menuHelper.width();
@@ -26,7 +27,9 @@ Menu.prototype.init = function () {
   this.window.on({
     'scroll': function () {
       self.checkMenuPosition();
-      self.checkActiveLinkMenu();
+      if (!self.isLinkScroll) {
+        self.checkActiveLinkMenu();
+      }
     },
     'resize': function () {
       self.blocksMenuPositions = [];
@@ -39,17 +42,21 @@ Menu.prototype.init = function () {
 
 Menu.prototype.scrollToContent = function (e) {
   e.preventDefault();
-  var $target = $(e.target),
+  var self = this,
+      $target = $(e.target),
       elementToScroll = $target.attr('href'),
       elementPositionTop = $(elementToScroll).offset().top,
       elementPositionToScroll = elementPositionTop - this.MENU_HEIGHT;
 
+  this.isLinkScroll = true;
   this.linksMenu.removeClass('is-active');
   $target.addClass('is-active');
   this.checkHelperPosition();
   $('body, html').animate({
     scrollTop: elementPositionToScroll + 1
-  }, 700);
+  }, 700, function () {
+    self.isLinkScroll = false;
+  });
   this.body.removeClass('menu-opened');
 };
 
