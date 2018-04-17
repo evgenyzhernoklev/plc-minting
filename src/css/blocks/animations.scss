@@ -1,60 +1,98 @@
 @keyframes fadeInLeft {
-	0% {
-		opacity: 0;
-		transform: translate3d(-100%, 0, 0);
-	}
-	100% {
-		opacity: 1;
-		transform: none;
-	}
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes fadeInRight {
-	0% {
-		opacity: 0;
-		transform: translate3d(100%, 0, 0);
-	}
-	100% {
-		opacity: 1;
-		transform: none;
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 	}
 }
 
 @keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		transform: translate3d(0, 100%, 0);
-	}
-	100% {
-		opacity: 1;
-		transform: none;
-	}
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 
 
 .animationBlock {
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+  &--delay1 {
+    animation-delay: 0.1s;
+  }
+  &--delay2 {
+    animation-delay: 0.2s;
+  }
+  &--delay3 {
+    animation-delay: 0.3s;
+  }
+  &--delay4 {
+    animation-delay: 0.4s;
+  }
+
   &--fadeInLeft {
-    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
 
     &.js-animation-enable {
-      animation: fadeInLeft 1s ease forwards;
+      animation-name: fadeInLeft;
     }
   }
 
   &--fadeInRight {
-    transform: translate3d(100%, 0, 0);
+    opacity: 0;
 
     &.js-animation-enable {
-      animation: fadeInRight 1s ease forwards;
+      animation-name: fadeInRight;
     }
   }
 
   &--fadeInUp {
-    transform: translate3d(0, 100%, 0);
+    opacity: 0;
 
     &.js-animation-enable {
-      animation: fadeInUp 1s ease forwards;
+      animation-name: fadeInUp;
+    }
+  }
+}
+
+@media ($tablet) {
+  .geographyCols__col {
+    &:nth-child(2n + 1) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(2n) {
+      animation-delay: 0.2s;
+    }
+  }
+}
+
+@media ($mobile) {
+  .roadmapItem {
+    .animationBlock--fadeInLeft {
+      &.js-animation-enable {
+        animation-name: fadeInRight;
+      }
     }
   }
 }
