@@ -7,7 +7,6 @@ var Menu = function(container) {
   this.mobileToggleButton = this.container.find('.js-menu-mobile-toggle');
 
   this.MENU_HEIGHT = this.container.innerHeight();
-  this.MENU_INDENT = this.container.offset().top;
   this.HELPER_WIDTH = this.menuHelper.width();
   this.TABLET_RESOLUTION = 992;
 
@@ -49,9 +48,10 @@ Menu.prototype.scrollToContent = function (e) {
 };
 
 Menu.prototype.checkMenuPosition = function () {
-  var scrollTop = this.window.scrollTop();
+  var scrollTop = this.window.scrollTop(),
+      indent = window.viewportSize.getWidth() > this.TABLET_RESOLUTION ? 30 : 0;
 
-  this.container.toggleClass('is-fixed', scrollTop > this.MENU_INDENT);
+  this.container.toggleClass('is-fixed', scrollTop > indent);
 };
 
 Menu.prototype.checkHelperPosition = function () {
