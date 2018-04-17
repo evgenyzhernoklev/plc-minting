@@ -16,6 +16,7 @@ Viewer.prototype.initClasses = function () {
   });
   new Menu('.js-menu-container');
   new Tooltips();
+  new BlockAnimations();
 };
 
 Viewer.prototype.initFunctions = function () {
