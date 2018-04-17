@@ -33,6 +33,10 @@
     display: block;
     margin: 0 auto 20px;
     width: 230px;
+    height: 60px;
+    line-height: 58px;
+    font-size: 18px;
+    @include font-sans-bold();
   }
 }
 
