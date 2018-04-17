@@ -27,6 +27,20 @@
   }
 }
 
+@media ($desktop) {
+  .menuWrapper {
+    &__in {
+      padding: 0 15px;
+    }
+
+    &__logo {
+      @include icon(logo, 120px, 15px);
+    }
+  }
+}
+
+
+
 .menu {
   display: flex;
   height: 100%;
@@ -61,8 +75,8 @@
     left: 0;
     width: 60px;
     height: 5px;
-    background-color: $blue;
-    transition: left 0.5s cubic-bezier(1, 0.01, 0, 1.22);
+    @include linear-gradient(90deg, $blue, #1675eb);
+    transition: left 0.5s cubic-bezier(1, 0.01, 0, 1.22), top 0.5s cubic-bezier(1, 0.01, 0, 1.22);
 
     &.is-active {
       display: block;
@@ -93,6 +107,43 @@
 
     &:first-child {
       margin: 0;
+    }
+  }
+}
+
+@media ($tablet) {
+  .menu {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #191919;
+
+    &__list {
+      flex-basis: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__listItem {
+      display: block;
+      margin-bottom: 10px;
+      padding-left: 0;
+      text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__inHelper {
+      height: 3px;
+      bottom: auto;
+      margin-left: -30px;
     }
   }
 }

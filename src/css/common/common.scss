@@ -6,6 +6,10 @@ body {
   font-size: 18px;
   line-height: 1.7;
   color: $black;
+
+  &.menu-opened {
+    overflow: hidden;
+  }
 }
 
 a {

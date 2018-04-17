@@ -6,11 +6,12 @@ $black:         #000;
 
 
 // animation
-$transition-normal: .3s linear;
-$transition-fast: .1s linear;
+$transition-normal:   .3s linear;
+$transition-fast:     .1s linear;
 
 
 
 // screen resolutions
-$tablet: 'max-width: 992px';
-$mobile: 'max-width: 767px';
+$desktop:   'max-width: 1200px';
+$tablet:    'max-width: 992px';
+$mobile:    'max-width: 767px';

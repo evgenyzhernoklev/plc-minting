@@ -8,6 +8,7 @@ var Menu = function(container) {
   this.MENU_HEIGHT = this.container.innerHeight();
   this.MENU_INDENT = this.container.offset().top;
   this.HELPER_WIDTH = this.menuHelper.width();
+  this.TABLET_RESOLUTION = 992;
 
   this.init();
 };
@@ -24,7 +25,7 @@ Menu.prototype.init = function () {
       self.checkMenuPosition();
     },
     'resize': function () {
-
+      self.checkHelperPosition();
     }
   });
 };
@@ -53,7 +54,19 @@ Menu.prototype.checkMenuPosition = function () {
 Menu.prototype.checkHelperPosition = function () {
   var $linkActive = this.linksMenu.filter('.is-active'),
       linkPositionLeft = $linkActive.position().left,
-      linkWidth = $linkActive.innerWidth();
+      linkPositionTop = $linkActive.position().top,
+      linkWidth = $linkActive.innerWidth(),
+      linkHeight = $linkActive.innerHeight();
 
-  this.menuHelper.css('left', linkPositionLeft + linkWidth / 2 - this.HELPER_WIDTH / 2);
+  if (window.viewportSize.getWidth() > this.TABLET_RESOLUTION) {
+    this.menuHelper.css({
+      'left': linkPositionLeft + linkWidth / 2 - this.HELPER_WIDTH / 2,
+      'top': 'auto'
+    });
+  } else {
+    this.menuHelper.css({
+      'left': '50%',
+      'top': linkPositionTop + linkHeight - 3
+    });
+  }
 };
