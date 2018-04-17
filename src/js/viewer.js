@@ -12,7 +12,7 @@ Viewer.prototype.init = function () {
 
 Viewer.prototype.initClasses = function () {
   $('.dropdown-container').each(function() {
-    new Dropdown(this);
+    new DropdownFooter(this);
   });
   new Menu('.js-menu-container');
   new Tooltips();

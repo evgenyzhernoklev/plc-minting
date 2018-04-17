@@ -10,6 +10,7 @@
     @include font-sans-bold();
     text-transform: uppercase;
     color: $blue;
+    cursor: default;
   }
 
   &__social {
@@ -78,8 +79,18 @@
     flex-basis: 20%;
   }
 
-  &__select {
-    margin-bottom: 45px;
+  &__langSelect {
+    position: relative;
+    margin: -13px 0 45px;
+  }
+
+  &__lang {
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin-top: 10px;
+    max-height: 230px;
+    overflow: auto;
   }
 }
 
@@ -89,11 +100,21 @@
 
     &__col {
       flex-basis: 100%;
-      margin-bottom: 19px;
+      margin-bottom: 10px;
     }
 
-    &__select {
-      margin-bottom: 25px;
+    &__in {
+      &--social {
+        margin-top: 17px;
+      }
+    }
+
+    &__menu {
+      padding-bottom: 9px;
+    }
+
+    &__langSelect {
+      margin: 13px 0 25px;
     }
   }
 }
@@ -125,7 +146,7 @@
     &__logo {
       display: block;
       height: 11px;
-      margin: 30px auto 25px;
+      margin: 39px auto 25px;
     }
 
     &__text {

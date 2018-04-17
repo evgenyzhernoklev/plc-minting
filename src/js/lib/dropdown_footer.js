@@ -1,4 +1,4 @@
-var Dropdown = function(container) {
+var DropdownFooter = function(container) {
   this.window = $(window);
   this.container = $(container);
   this.content = this.container.find('.dropdown-content');
@@ -8,20 +8,22 @@ var Dropdown = function(container) {
   this.init();
 };
 
-Dropdown.prototype.init = function () {
+DropdownFooter.prototype.init = function () {
   this.links.on('click', this.toggleDropdown.bind(this));
   this.window.on('resize', this.checkDropdown.bind(this));
 };
 
-Dropdown.prototype.toggleDropdown = function (e) {
+DropdownFooter.prototype.toggleDropdown = function (e) {
   e.preventDefault();
   var $target = $(e.target);
 
-  $target.toggleClass('is-active');
-  this.content.stop().slideToggle();
+  if (window.viewportSize.getWidth() <= this.MOBILE_RESOLUTION) {
+    $target.toggleClass('is-active');
+    this.content.stop().slideToggle();
+  }
 };
 
-Dropdown.prototype.checkDropdown = function () {
+DropdownFooter.prototype.checkDropdown = function () {
   if (window.viewportSize.getWidth() > this.MOBILE_RESOLUTION) {
     this.links.removeClass('is-active');
     this.content.stop().slideDown();

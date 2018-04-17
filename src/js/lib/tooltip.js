@@ -19,11 +19,11 @@ Tooltips.prototype.switchTooltip = function (e) {
   e.preventDefault();
   var $target = $(e.target).closest('.tooltip-link');
 
-  if (!$target.hasClass('is-active')) {
+  if (!$target.hasClass('tooltip-active')) {
     this.closeTooltips();
 
     $target
-      .addClass('is-active')
+      .addClass('tooltip-active')
       .closest('.tooltip-container').find('.tooltip-content')
       .stop().fadeIn();
   } else {
@@ -32,6 +32,6 @@ Tooltips.prototype.switchTooltip = function (e) {
 };
 
 Tooltips.prototype.closeTooltips = function () {
-  this.links.removeClass('is-active');
+  this.links.removeClass('tooltip-active');
   this.content.stop().fadeOut();
 };

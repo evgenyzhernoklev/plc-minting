@@ -58,3 +58,27 @@ $lang-list: ar ch de en fr ind it jp kr kz ml mn pg ru sp th tur vt;
     }
   }
 }
+
+
+
+.langSelect {
+  &__current {
+    position: relative;
+    height: 44px;
+    padding: 0 35px 0 17px;
+    font-size: 17px;
+    line-height: 42px;
+    color: #7e7e7e;
+    border: 1px solid #7e7e7e;
+    cursor: pointer;
+    border-radius: 3px;
+
+    &:before {
+      content: '';
+      @include icon(arrow_gray, 9px, 5px);
+      position: absolute;
+      top: 18px;
+      right: 15px;
+    }
+  }
+}
