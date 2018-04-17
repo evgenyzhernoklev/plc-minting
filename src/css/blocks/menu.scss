@@ -15,27 +15,83 @@
   }
 
   &__in {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 0 50px;
-  }
-
-  &__logo {
-
+    padding: 0 100px 0 50px;
   }
 }
 
 @media ($desktop) {
   .menuWrapper {
+    top: 0;
+
     &__in {
-      padding: 0 15px;
+      padding: 0 65px 0 15px;
     }
 
     &__logo {
       @include icon(logo, 120px, 15px);
     }
+  }
+}
+
+@media ($tablet) {
+  .menuWrapper {
+    &__in {
+      justify-content: center;
+      padding: 0 15px;
+    }
+  }
+}
+
+
+
+.mobileToggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  cursor: pointer;
+
+  &:before {
+    @include icon(menu, 24px, 16px);
+    @include show();
+
+    .menu-opened & {
+      @include hide();
+    }
+  }
+
+  &:after {
+    @include icon(back, 24px, 16px);
+    @include hide();
+
+    .menu-opened & {
+      @include show();
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media ($tablet) {
+  .mobileToggle {
+    display: block;
   }
 }
 
@@ -90,7 +146,7 @@
   }
 
   &__button {
-    margin: 0 10px;
+    margin-right: 10px;
     padding: 0 25px;
     height: 40px;
     font-size: 14px;
@@ -105,8 +161,8 @@
       line-height: 38px;
     }
 
-    &:first-child {
-      margin: 0;
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
@@ -117,11 +173,19 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    top: 50px;
+    top: 70px;
     right: 0;
     bottom: 0;
     left: 0;
+    height: auto;
+    min-height: 370px;
+    padding-bottom: 120px;
     background-color: #191919;
+    @include hide();
+
+    .menu-opened & {
+      @include show();
+    }
 
     &__list {
       flex-basis: 100%;
@@ -145,13 +209,34 @@
       bottom: auto;
       margin-left: -30px;
     }
+
+    &__buttons {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      left: 0;
+      padding: 0 15px;
+    }
+
+    &__button {
+      display: block;
+      margin: 0 auto 10px;
+      max-width: 640px;
+
+      &:last-child {
+        margin: 0 auto;
+      }
+    }
   }
 }
 
 
 
 .menuLanguage {
-  position: relative;
+  position: absolute;
+  top: 15px;
+  right: 50px;
 
   &__current {
     position: relative;
@@ -180,5 +265,11 @@
     right: 0;
     width: 400px;
     margin-top: 10px;
+  }
+}
+
+@media ($desktop) {
+  .menuLanguage {
+    right: 15px;
   }
 }
