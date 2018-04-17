@@ -45,11 +45,6 @@
     }
 
     .roadmapItem {
-      &__info {
-        right: 0;
-        left: 210px;
-      }
-
       &__point {
         right: auto;
         left: 115px;
@@ -61,6 +56,10 @@
     &:before {
       display: none;
     }
+  }
+
+  &__in {
+    position: relative;
   }
 
   &__point {
@@ -83,7 +82,8 @@
   &__info {
     position: absolute;
     top: 50px;
-    right: 210px;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -94,17 +94,6 @@
     &--right {
       padding-right: 0;
       padding-left: 165px;
-
-      .roadmapItem {
-        &__info {
-          right: 0;
-          left: 165px;
-        }
-      }
-    }
-
-    &__info {
-      right: 165px;
     }
   }
 }

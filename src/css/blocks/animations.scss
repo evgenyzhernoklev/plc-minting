@@ -35,20 +35,26 @@
 
 .animationBlock {
   &--fadeInLeft {
+    transform: translate3d(-100%, 0, 0);
+
     &.js-animation-enable {
-      animation: fadeInLeft 1s ease;
+      animation: fadeInLeft 1s ease forwards;
     }
   }
 
   &--fadeInRight {
+    transform: translate3d(100%, 0, 0);
+
     &.js-animation-enable {
-      animation: fadeInRight 1s ease;
+      animation: fadeInRight 1s ease forwards;
     }
   }
 
   &--fadeInUp {
+    transform: translate3d(0, 100%, 0);
+
     &.js-animation-enable {
-      animation: fadeInUp 1s ease;
+      animation: fadeInUp 1s ease forwards;
     }
   }
 }

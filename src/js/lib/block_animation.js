@@ -26,12 +26,13 @@ BlockAnimations.prototype.init = function () {
 };
 
 BlockAnimations.prototype.collectBlockPositions = function () {
-  var self = this;
+  var self = this,
+      windowHeight = this.window.height();
 
   this.blocks.each(function(index, element) {
     var elementPositionTop = Math.round($(element).offset().top),
         elementHeight = Math.round($(element).innerHeight()),
-        startPosition = elementPositionTop - Math.round(self.window.height()),
+        startPosition = elementPositionTop - windowHeight,
         endPosition = elementPositionTop + elementHeight,
         elementPosition = [startPosition, endPosition];
 
