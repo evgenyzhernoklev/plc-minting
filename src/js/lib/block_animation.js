@@ -1,6 +1,7 @@
 var BlockAnimations = function() {
   this.window = $(window);
   this.body = $('body');
+  this.menu = $('.menuWrapper');
   this.blocks = $('.js-animation-block');
   this.blocksPositions = [];
   this.init();
@@ -28,9 +29,11 @@ BlockAnimations.prototype.collectBlockPositions = function () {
   var self = this;
 
   this.blocks.each(function(index, element) {
-    var startPosition = Math.round($(element).offset().top),
+    var elementPositionTop = Math.round($(element).offset().top),
         elementHeight = Math.round($(element).innerHeight()),
-        elementPosition = [startPosition, startPosition + elementHeight];
+        startPosition = elementPositionTop - Math.round(self.window.height()),
+        endPosition = elementPositionTop + elementHeight,
+        elementPosition = [startPosition, endPosition];
 
     self.blocksPositions.push(elementPosition);
   });
@@ -39,5 +42,13 @@ BlockAnimations.prototype.collectBlockPositions = function () {
 };
 
 BlockAnimations.prototype.checkActiveBlock = function () {
+  var self = this,
+      arr = this.blocksPositions,
+      currentPosition = this.window.scrollTop() + this.menu.innerHeight();
 
+  arr.forEach(function(item, i, arr) {
+    if (currentPosition >= item[0] && currentPosition < item[1]) {
+      self.blocks.eq(i).addClass('js-animation-enable');
+    }
+  });
 };

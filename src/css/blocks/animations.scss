@@ -1,0 +1,35 @@
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+
+
+.js-animation-enable {
+  .animationBlock {
+    &--fadeInLeft {
+      animation: fadeInLeft 1s ease;
+    }
+
+    &--fadeInRight {
+      animation: fadeInRight 1s ease;
+    }
+  }
+}
