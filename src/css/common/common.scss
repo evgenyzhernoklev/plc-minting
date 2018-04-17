@@ -13,14 +13,18 @@ a {
   cursor: pointer;
 }
 
-@media ($mobile) {
-  body  {
-    font-size: 16px;
-    line-height: 1.5;
-
+@media ($tablet) {
+  body {
     &.menu-opened {
       overflow: hidden;
     }
+  }
+}
+
+@media ($mobile) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 

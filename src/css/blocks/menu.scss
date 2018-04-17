@@ -102,6 +102,12 @@
   display: flex;
   height: 100%;
 
+  &__in {
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+  }
+
   &__list {
     position: relative;
     margin-right: 25px;
@@ -170,9 +176,6 @@
 
 @media ($tablet) {
   .menu {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 70px;
     right: 0;
@@ -180,13 +183,20 @@
     left: 0;
     height: auto;
     min-width: 320px;
-    min-height: 370px;
-    padding-bottom: 120px;
     background-color: #191919;
+    overflow: auto;
     @include hide();
 
     .menu-opened & {
       @include show();
+    }
+
+
+
+    &__in {
+      align-items: center;
+      min-height: 370px;
+      padding-bottom: 120px;
     }
 
     &__list {
