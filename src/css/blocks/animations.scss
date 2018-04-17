@@ -31,6 +31,17 @@
   }
 }
 
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0)
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
 
 
 .animationBlock {
@@ -72,6 +83,14 @@
 
     &.js-animation-enable {
       animation-name: fadeInUp;
+    }
+  }
+
+  &--zoomIn {
+    opacity: 0;
+
+    &.js-animation-enable {
+      animation-name: zoomIn;
     }
   }
 }

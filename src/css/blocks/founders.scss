@@ -33,11 +33,20 @@
     border-radius: 50%;
     font-size: 0;
     line-height: 0;
+    overflow: hidden;
+
+    &:hover {
+      .foundersPerson__avatar {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__avatar {
     width: 100%;
     border-radius: 50%;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
   }
 
   &__name {
