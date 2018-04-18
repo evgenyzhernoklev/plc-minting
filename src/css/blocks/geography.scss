@@ -3,6 +3,14 @@
   @include clearfix();
 }
 
+@media ($mobile) {
+  .geography {
+    padding-bottom: 0;
+  }
+}
+
+
+
 // top cols
 .geographyCols {
   padding: 30px 0 0;
@@ -64,11 +72,26 @@
   &__listWrapper {
     width: 370px;
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
     bottom: 0;
   }
 }
+
+@media ($mobile) {
+  .mapWrapper {
+    margin-top: 0;
+    padding-right: 175px;
+
+    &__listWrapper {
+      width: 280px;
+      top: 45px;
+      right: 15px;
+    }
+  }
+}
+
+
 
 .mapList {
   &__item {
@@ -79,6 +102,9 @@
     height: 70px;
     line-height: 70px;
 
+    &:nth-child(1) {
+      margin-left: 15px;
+    }
     &:nth-child(2) {
       margin-left: 85px;
     }
@@ -86,25 +112,25 @@
       margin-left: 133px;
     }
     &:nth-child(4) {
-      margin-left: 168px;
+      margin-left: 165px;
     }
     &:nth-child(5) {
-      margin-left: 185px;
-    }
-    &:nth-child(6) {
-      margin-left: 188px;
-    }
-    &:nth-child(7) {
       margin-left: 180px;
     }
+    &:nth-child(6) {
+      margin-left: 180px;
+    }
+    &:nth-child(7) {
+      margin-left: 165px;
+    }
     &:nth-child(8) {
-      margin-left: 160px;
+      margin-left: 133px;
     }
     &:nth-child(9) {
-      margin-left: 130px;
+      margin-left: 85px;
     }
     &:nth-child(10) {
-      margin-left: 80px;
+      margin-left: 15px;
     }
 
     &:last-child {
@@ -114,6 +140,48 @@
 
   &__country {
     @include font-sans-bold();
+  }
+}
+
+@media ($mobile) {
+  .mapList {
+    &__item {
+      margin-bottom: 10px;
+      padding-left: 77px;
+      height: 60px;
+      line-height: 60px;
+
+      &:nth-child(1) {
+        margin-left: 15px;
+      }
+      &:nth-child(2) {
+        margin-left: 69px;
+      }
+      &:nth-child(3) {
+        margin-left: 110px;
+      }
+      &:nth-child(4) {
+        margin-left: 135px;
+      }
+      &:nth-child(5) {
+        margin-left: 150px;
+      }
+      &:nth-child(6) {
+        margin-left: 150px;
+      }
+      &:nth-child(7) {
+        margin-left: 135px;
+      }
+      &:nth-child(8) {
+        margin-left: 110px;
+      }
+      &:nth-child(9) {
+        margin-left: 69px;
+      }
+      &:nth-child(10) {
+        margin-left: 15px;
+      }
+    }
   }
 }
 
@@ -133,5 +201,12 @@
     font-size: 16px;
     @include font-sans-bold();
     transform: translate(-50%, -50%);
+  }
+}
+
+@media ($mobile) {
+  .mapChart {
+    top: -5px;
+    transform: scale(0.85);
   }
 }

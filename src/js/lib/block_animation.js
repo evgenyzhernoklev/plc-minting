@@ -23,19 +23,6 @@ BlockAnimations.prototype.init = function () {
       self.checkActiveBlock();
     }
   });
-
-  $('.chart-map').easyPieChart({
-    barColor: '#169feb',
-    trackColor: '#ebebeb',
-    scaleLength: 0,
-    lineCap: 'butt',
-    lineWidth: 8,
-    size: 70,
-    animate: {
-      duration: 2000,
-      enabled: true
-    }
-  });
 };
 
 BlockAnimations.prototype.collectBlockPositions = function () {
@@ -65,13 +52,22 @@ BlockAnimations.prototype.checkActiveBlock = function () {
       var $activeBlock = self.blocks.eq(i),
           animation = $activeBlock.data('animation');
 
-      $activeBlock.addClass('js-animation-enable');
-
-      if (animation) {
-
+      if (animation && !$activeBlock.hasClass('js-animation-enable')) {
+        $('.' + animation).easyPieChart({
+          barColor: '#169feb',
+          trackColor: '#ebebeb',
+          scaleLength: 0,
+          lineCap: 'butt',
+          lineWidth: 8,
+          size: 70,
+          animate: {
+            duration: 2000,
+            enabled: true
+          }
+        });
       }
 
-      console.log(animation);
+      $activeBlock.addClass('js-animation-enable');
     }
   });
 };
