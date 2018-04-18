@@ -62,7 +62,16 @@ BlockAnimations.prototype.checkActiveBlock = function () {
 
   arr.forEach(function(item, i, arr) {
     if (currentPosition >= item[0] && currentPosition < item[1]) {
-      self.blocks.eq(i).addClass('js-animation-enable');
+      var $activeBlock = self.blocks.eq(i),
+          animation = $activeBlock.data('animation');
+
+      $activeBlock.addClass('js-animation-enable');
+
+      if (animation) {
+
+      }
+
+      console.log(animation);
     }
   });
 };

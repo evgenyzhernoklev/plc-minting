@@ -60,19 +60,22 @@
     width: 920px;
     float: right;
   }
+
+  &__listWrapper {
+    width: 370px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .mapList {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 370px;
-
   &__item {
     position: relative;
     margin-bottom: 12px;
     padding-left: 83px;
+    width: 100%;
     height: 70px;
     line-height: 70px;
 
