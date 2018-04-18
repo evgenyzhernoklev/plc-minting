@@ -1,3 +1,9 @@
+.geography {
+  padding-bottom: 90px;
+  @include clearfix();
+}
+
+// top cols
 .geographyCols {
   padding: 30px 0 0;
   text-align: center;
@@ -39,5 +45,90 @@
       margin-bottom: 3px;
       font-size: 30px;
     }
+  }
+}
+
+
+
+// map list & map
+.mapWrapper {
+  position: relative;
+  margin-top: 80px;
+  padding-right: 220px;
+
+  &__img {
+    width: 920px;
+    float: right;
+  }
+}
+
+.mapList {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 370px;
+
+  &__item {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 83px;
+    height: 70px;
+    line-height: 70px;
+
+    &:nth-child(2) {
+      margin-left: 85px;
+    }
+    &:nth-child(3) {
+      margin-left: 133px;
+    }
+    &:nth-child(4) {
+      margin-left: 168px;
+    }
+    &:nth-child(5) {
+      margin-left: 185px;
+    }
+    &:nth-child(6) {
+      margin-left: 188px;
+    }
+    &:nth-child(7) {
+      margin-left: 180px;
+    }
+    &:nth-child(8) {
+      margin-left: 160px;
+    }
+    &:nth-child(9) {
+      margin-left: 130px;
+    }
+    &:nth-child(10) {
+      margin-left: 80px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__country {
+    @include font-sans-bold();
+  }
+}
+
+
+
+.mapChart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+
+  &__info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+    @include font-sans-bold();
+    transform: translate(-50%, -50%);
   }
 }
