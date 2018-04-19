@@ -1,6 +1,15 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
     transform: scale(0.7);
   }
   100% {
@@ -84,9 +93,18 @@
 
   &--fadeIn {
     opacity: 0;
+    animation-delay: 0.3s;
 
     &.js-animation-enable {
       animation-name: fadeIn;
+    }
+  }
+
+  &--fadeInScale {
+    opacity: 0;
+
+    &.js-animation-enable {
+      animation-name: fadeInScale;
     }
   }
 
