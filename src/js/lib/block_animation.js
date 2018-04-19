@@ -38,8 +38,6 @@ BlockAnimations.prototype.collectBlockPositions = function () {
 
     self.blocksPositions.push(elementPosition);
   });
-
-  // console.log(self.blocksPositions);
 };
 
 BlockAnimations.prototype.checkActiveBlock = function () {
@@ -52,7 +50,7 @@ BlockAnimations.prototype.checkActiveBlock = function () {
       var $activeBlock = self.blocks.eq(i),
           animation = $activeBlock.data('animation');
 
-      if (animation && !$activeBlock.hasClass('js-animation-enable')) {
+      if (animation == 'chart-map' && !$activeBlock.hasClass('js-animation-enable')) {
         $('.' + animation).easyPieChart({
           barColor: '#169feb',
           trackColor: '#ebebeb',
@@ -63,6 +61,9 @@ BlockAnimations.prototype.checkActiveBlock = function () {
           animate: {
             duration: 2000,
             enabled: true
+          },
+          onStep: function(from, to, percent) {
+            $(this.el).find('.mapChart__info').text(percent.toFixed(1));
           }
         });
       }
