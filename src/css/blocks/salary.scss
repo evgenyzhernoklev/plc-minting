@@ -3,6 +3,7 @@ $small: 'max-width: 580px';
 .salary {
   padding: 0 0 70px;
   background: url('../img/bg/speed_bg.jpg') no-repeat top center;
+  background-attachment: fixed;
   background-size: cover;
 
   &__title {
