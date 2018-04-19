@@ -20,7 +20,7 @@ Viewer.prototype.initClasses = function () {
 };
 
 Viewer.prototype.initFunctions = function () {
-
+  $(window).enllax();
 };
 
 Viewer.prototype.updateResizer = function () {
