@@ -1,5 +1,6 @@
 .header {
   height: 880px;
+  min-height: 500px;
   text-align: center;
   background: url('../img/header_bg.jpg') no-repeat top center;
   background-size: cover;
@@ -47,6 +48,7 @@
 @media ($mobile) {
   .header {
     height: 400px;
+    min-height: 400px;
 
     &__logo {
       width: 90%;
