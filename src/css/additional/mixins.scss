@@ -73,33 +73,28 @@ mixins for:
 
 // fonts
 @mixin font-raleway-regular() {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'ralewayregular', sans-serif;
   font-weight: 400;
 }
 
 @mixin font-raleway-semibold() {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
+  font-family: 'ralewaysemibold', sans-serif;
 }
 
 @mixin font-raleway-bold() {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  font-family: 'ralewaybold', sans-serif;
 }
 
 @mixin font-sans-regular() {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-family: 'open_sansregular', sans-serif;
 }
 
 @mixin font-sans-semibold() {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+  font-family: 'open_sanssemibold', sans-serif;
 }
 
 @mixin font-sans-bold() {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'open_sansbold', sans-serif;
 }
 
 
