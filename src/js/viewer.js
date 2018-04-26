@@ -21,22 +21,13 @@ Viewer.prototype.initClasses = function () {
   new Menu('.js-menu-container');
   new Tooltips();
   new BlockAnimations();
+  $('.js-parallax').each(function() {
+    new Parallax(this);
+  });
 };
 
 Viewer.prototype.initFunctions = function () {
   this.fullWindowHeight();
-
-  $(window).scroll(function() {
-    var scrollTop = $(window).scrollTop();
-    var imgPos = -scrollTop / 1 + 'px';
-    $('.js-parallax').css('transform', 'translateY(' + imgPos + ')');
-  });
-
-  $(window).scroll(function() {
-    var scrollTop = $(window).scrollTop();
-    var imgPos = -scrollTop / 2 + 'px';
-    $('.js-parallax-buttons').css('transform', 'translateY(' + imgPos + ')');
-  });
 };
 
 Viewer.prototype.updateResizer = function () {
