@@ -169,6 +169,10 @@
   &__link {
     font-size: 17px;
     color: #7e7e7e;
+
+    &:hover {
+      color: $white;
+    }
   }
 }
 
@@ -196,15 +200,27 @@
     vertical-align: middle;
 
     &--fb {
-      @include icon(fb, 12px, 22px);
+      @include icon(fb, 12px, 23px);
+
+      &:hover {
+        @include icon(fb_hover, 12px, 23px);
+      }
     }
 
     &--youtube {
       @include icon(youtube, 21px, 16px);
+
+      &:hover {
+        @include icon(youtube_hover, 21px, 16px);
+      }
     }
 
     &--vk {
-      @include icon(vk, 25px, 14px);
+      @include icon(vk, 25px, 15px);
+
+      &:hover {
+        @include icon(vk_hover, 25px, 15px);
+      }
     }
 
     &:last-child {
