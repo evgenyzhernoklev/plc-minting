@@ -27,5 +27,8 @@ DropdownFooter.prototype.checkDropdown = function () {
   if (window.viewportSize.getWidth() > this.MOBILE_RESOLUTION) {
     this.links.removeClass('is-active');
     this.content.stop().slideDown();
+  } else {
+    this.links.addClass('is-active');
+    this.content.stop().slideUp();
   }
 };
