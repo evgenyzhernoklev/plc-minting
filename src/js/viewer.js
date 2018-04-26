@@ -24,7 +24,6 @@ Viewer.prototype.initClasses = function () {
 };
 
 Viewer.prototype.initFunctions = function () {
-  $(window).enllax();
   this.fullWindowHeight();
 };
 
