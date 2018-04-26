@@ -59,6 +59,16 @@ $lang-list: ar ch de en fr ind it jp ko kk ms mn pt-br ru es th tr vi;
   }
 }
 
+@media (max-width: 767px) {
+  .lang {
+    &--cols2 {
+      .lang__item {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
 
 
 .langSelect {

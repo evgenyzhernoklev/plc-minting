@@ -9,7 +9,7 @@ Tooltips.prototype.init = function () {
 
   this.links.on('click', this.switchTooltip.bind(this));
   $('body').on('click touchstart', function (e) {
-    if (!$(e.target).closest('.tooltip-link').length) {
+    if (!$(e.target).closest('.tooltip-container').length) {
       self.closeTooltips();
     }
   });

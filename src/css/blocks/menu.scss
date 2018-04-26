@@ -285,3 +285,13 @@
     right: 15px;
   }
 }
+
+@media ($mobile) {
+  .menuLanguage {
+    &__tooltip {
+      width: 280px;
+      max-height: 230px;
+      overflow: auto;
+    }
+  }
+}
