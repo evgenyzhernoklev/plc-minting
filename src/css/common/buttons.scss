@@ -18,6 +18,10 @@
   color: $black;
   background-color: #f3f3f3;
   border-radius: 25px;
+
+  &:hover {
+    background-color: #e4e4e4;
+  }
 }
 
 .linkButton--white {
@@ -27,6 +31,10 @@
   color: $black;
   background-color: $white;
   border-radius: 25px;
+
+  &:hover {
+    background-color: #ffedd9;
+  }
 }
 
 .linkButton--blueGradient {

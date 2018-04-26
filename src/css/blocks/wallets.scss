@@ -124,10 +124,16 @@
       top: 2px;
       right: 100%;
       margin-right: 10px;
+      transition: background-image $transition-normal;
     }
 
     &:hover {
-      border-bottom-color: transparent;
+      color: $blue;
+      border-bottom-color: $blue;
+
+      &:before {
+        @include icon(download_hover, 24px, 22px);
+      }
     }
   }
 }
@@ -193,6 +199,7 @@
 
   &__img {
     width: 140%;
+    max-width: none;
   }
 }
 

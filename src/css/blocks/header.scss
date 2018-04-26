@@ -33,7 +33,7 @@
   &__button {
     display: block;
     margin: 0 auto 20px;
-    width: 230px;
+    width: 370px;
     height: 60px;
     line-height: 60px;
     font-size: 18px;
@@ -41,6 +41,10 @@
 
     &.linkButton--whiteTransparent {
       line-height: 58px;
+
+      &:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+      }
     }
   }
 }
@@ -61,6 +65,8 @@
 
     &__button {
       margin-bottom: 10px;
+      width: 100%;
+      max-width: 290px;
       font-size: 16px;
       height: 50px;
       line-height: 50px;

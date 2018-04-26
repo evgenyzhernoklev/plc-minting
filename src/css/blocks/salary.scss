@@ -50,6 +50,11 @@ $small: 'max-width: 580px';
   box-shadow: 0 2px 20px rgba(0,0,0, 0.15);
   border-radius: 5px;
   overflow: hidden;
+  transition: box-shadow $transition-normal;
+
+  &:hover {
+    box-shadow: 0 2px 30px rgba(0,0,0, 0.3);
+  }
 
   &--special {
     flex-basis: 31%;
@@ -203,6 +208,10 @@ $small: 'max-width: 580px';
     &:first-child {
       border-top: 1px solid #edeaea;
     }
+  }
+
+  &__rate {
+    margin: 0 -10px;
   }
 
   &__strong {
