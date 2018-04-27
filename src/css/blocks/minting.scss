@@ -36,7 +36,8 @@
     }
 
     &__scheme {
-      margin-bottom: 30px;
+      margin-right: 0;
+      margin-bottom: 50px;
     }
 
     &__info {
@@ -120,6 +121,11 @@
       border: 5px solid #1a70db;
       border-radius: 50%;
       box-shadow: 0 5px 15px rgba(0,0,0, 0.25);
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+      animation-name: fadeIn;
+      opacity: 0;
     }
     &:after {
       content: '';
@@ -128,20 +134,28 @@
       background-color: #cdcdce;
       position: absolute;
       right: 100%;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+      animation-name: fadeIn;
+      opacity: 0;
     }
 
     &:nth-child(1) {
       top: 49px;
+      animation-delay: 3.5s;
 
       &:before {
         top: 60px;
         left: -95px;
+        animation-delay: 5s;
       }
       &:after {
         top: 52px;
         margin-right: -3px;
         width: 85px;
         transform: rotate(-23deg);
+        animation-delay: 5s;
       }
 
       .mintingSchemeList__title {
@@ -151,28 +165,34 @@
     }
     &:nth-child(2) {
       top: 189px;
+      animation-delay: 4s;
 
       &:before {
         top: 22px;
         left: -48px;
+        animation-delay: 5.5s;
       }
       &:after {
         top: 34px;
         width: 30px;
+        animation-delay: 5.5s;
       }
     }
     &:nth-child(3) {
       top: 329px;
+      animation-delay: 4.5s;
 
       &:before {
         bottom: 60px;
         left: -95px;
+        animation-delay: 6s;
       }
       &:after {
         bottom: 52px;
         margin-right: -3px;
         width: 85px;
         transform: rotate(23deg);
+        animation-delay: 6s;
       }
     }
   }
@@ -277,6 +297,21 @@
   }
 }
 
+@media ($mobile) {
+  .diagram {
+    margin: 0 auto 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  .diagram {
+    margin: -80px auto -40px;
+    transform: scale(0.65);
+  }
+}
+
+
+
 .diagramInfo {
   width: 228px;
   height: 228px;
@@ -330,5 +365,65 @@
 
   &__avatar {
     vertical-align: middle;
+  }
+
+  &__logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+    animation-delay: 2.9s;
+
+    &:before {
+      content: '';
+      @include icon(logo_small, 20px, 23px);
+      vertical-align: middle;
+    }
+
+    &--left {
+      top: 85px;
+      left: -60px;
+    }
+
+    &--center {
+      top: 105px;
+      left: 50%;
+      margin-left: -20px;
+    }
+
+    &--right {
+      top: 85px;
+      right: -60px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    width: 2px;
+    height: 60px;
+    background-color: $black;
+    animation-delay: 2.5s;
+
+    &--left {
+      top: 45px;
+      left: -10px;
+      transform: rotate(45deg);
+    }
+
+    &--center {
+      top: 100%;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    &--right {
+      top: 45px;
+      right: -10px;
+      transform: rotate(-45deg);
+    }
   }
 }
