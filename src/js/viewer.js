@@ -43,7 +43,7 @@ Viewer.prototype.fullWindowHeight = function () {
 Viewer.prototype.scrollToBlock = function (e) {
   e.preventDefault();
   var target = $(e.target).closest('.js-scroll-link').attr('href'),
-      targetPositionTop = $(target).offset().top - this.menu.height() * 1.5;
+      targetPositionTop = $(target).offset().top - this.menu.height();
 
   $('body, html').animate({
     scrollTop: targetPositionTop

@@ -177,6 +177,7 @@
 @media ($tablet) {
   .menu {
     position: fixed;
+    z-index: 99;
     top: 70px;
     right: 0;
     bottom: 0;
@@ -190,8 +191,6 @@
     .menu-opened & {
       @include show();
     }
-
-
 
     &__in {
       align-items: center;
@@ -223,12 +222,18 @@
     }
 
     &__buttons {
-      display: block;
+      display: none;
       position: absolute;
       right: 0;
       bottom: 10px;
       left: 0;
       padding: 0 15px;
+      // @include hide();
+
+      .menu-opened & {
+        // @include show();
+        display: block;
+      }
     }
 
     &__button {
