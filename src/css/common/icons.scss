@@ -10,6 +10,10 @@
   @include icon(logo, 200px, 24px);
 }
 
+.icon--avatar {
+  @include icon(avatar, 29px, 30px);
+}
+
 .icon--controller {
   @include icon(controller, 24px, 24px);
 }
