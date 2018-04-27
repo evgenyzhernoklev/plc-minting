@@ -4,11 +4,11 @@ var DropdownFooter = function(container) {
   this.content = this.container.find('.dropdown-content');
   this.links = this.container.find('.dropdown-link');
   this.MOBILE_RESOLUTION = 767;
-
   this.init();
 };
 
 DropdownFooter.prototype.init = function () {
+  this.checkDropdown();
   this.links.on('click', this.toggleDropdown.bind(this));
   this.window.on('resize', this.checkDropdown.bind(this));
 };
