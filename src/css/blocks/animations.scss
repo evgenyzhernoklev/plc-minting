@@ -119,6 +119,7 @@
     opacity: 0;
     animation-delay: 0.3s;
 
+    .js-animation-enable &,
     &.js-animation-enable {
       animation-name: fadeIn;
     }
@@ -159,6 +160,7 @@
   &--zoomIn {
     opacity: 0;
 
+    .js-animation-enable &,
     &.js-animation-enable {
       animation-name: zoomIn;
     }

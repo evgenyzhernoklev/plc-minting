@@ -17,9 +17,10 @@
   }
 
   &__scheme {
-    flex-basis: 710px;
+    flex-basis: 680px;
     flex-shrink: 0;
     margin-top: 27px;
+    margin-right: 30px;
   }
 
   &__info {
@@ -97,7 +98,7 @@
 .mintingSchemeList {
   &__item {
     position: absolute;
-    right: 35px;
+    right: 5px;
     width: 280px;
     height: 70px;
     padding-left: 75px;
@@ -130,17 +131,17 @@
     }
 
     &:nth-child(1) {
-      top: 45px;
+      top: 49px;
 
       &:before {
         top: 60px;
-        left: -100px;
+        left: -95px;
       }
       &:after {
         top: 52px;
         margin-right: -3px;
         width: 85px;
-        transform: rotate(-21deg);
+        transform: rotate(-23deg);
       }
 
       .mintingSchemeList__title {
@@ -149,11 +150,11 @@
       }
     }
     &:nth-child(2) {
-      top: 185px;
+      top: 189px;
 
       &:before {
         top: 22px;
-        left: -53px;
+        left: -48px;
       }
       &:after {
         top: 34px;
@@ -161,17 +162,17 @@
       }
     }
     &:nth-child(3) {
-      top: 325px;
+      top: 329px;
 
       &:before {
-        top: -15px;
-        left: -100px;
+        bottom: 60px;
+        left: -95px;
       }
       &:after {
         bottom: 52px;
         margin-right: -3px;
         width: 85px;
-        transform: rotate(21deg);
+        transform: rotate(23deg);
       }
     }
   }
@@ -241,5 +242,68 @@
       margin-bottom: 23px;
       font-size: 20px;
     }
+  }
+}
+
+
+
+// diagram
+.diagram {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+
+  &__big {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 450px;
+    border: 20px solid #ffe8e8;
+    border-radius: 50%;
+    animation-delay: 1.3s;
+  }
+
+  &__circle {
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    top: 90px;
+    left: 90px;
+    border: 2px solid #c0c0c1;
+    border-radius: 50%;
+    animation-delay: 0.9s;
+  }
+}
+
+.diagramInfo {
+  width: 228px;
+  height: 228px;
+  padding-top: 44px;
+  position: absolute;
+  top: 111px;
+  left: 111px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 7px solid $blue;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0, 0.15);
+
+  &__title {
+    margin-bottom: 28px;
+    @include font-raleway-bold();
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  &__blue {
+    color: #1a70db;
+  }
+
+  &__description {
+    @include font-sans-bold();
+    font-size: 12px;
+    line-height: 24px;
   }
 }
